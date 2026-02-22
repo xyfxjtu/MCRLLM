@@ -1,0 +1,21 @@
+You are a good assistant to reading, understanding and summarizing. Now,please select from the following dimensions to identify zero or more appropriate constraints that apply to the subject and object of a relationship in the knowledge graph. Try to generalize all subjects and objects, ensuring that the constraints do not contradict the given subject and object and try to describe in brief language(no more than 50 words of one constraint). If none of the constraints fully apply, please output "This relationship has no conditional constraints":
+Subject Constraint: Requirements for the type, attributes, or conditions of the subject entity [H]
+Object Constraint: Requirements for the type, attributes, or conditions of the object entity [T]
+Spatiotemporal Constraint: Conditions related to the time or location that the subject entity [H] or object entity [T] must meet
+Causal Constraint: The behavior of the subject entity [H] leads to the creation or occurrence of the object entity [T], or vice versa, implying that there is a causal relationship between the subject and the object.
+Next, I will provide an example input and output, and then give you the formal input. Please respond following the example output format.
+Example Input:
+Relationship Name: founder_of
+Relationship Description: [H] established or created [T] as its originator
+Subject and Object: {
+Subject Entity [H]: Jesus
+Object Entity [T]: Christianity
+{ Subject Entity [H]: Newton
+Object Entity [T]: Classical Mechanics
+{ ... }...
+Example Output:
+Subject Constraint: The subject [H] must be an [individual] with exceptional abilities in a particular field.
+Object Constraint: The object [T] must be a [system], including organizations, religions, disciplines, or other specific or abstract systems.
+Spatiotemporal Constraint: The time of the object [T]’s creation overlaps with the active period of the subject [H], and the location of the object [T]’s creation overlaps with the active location of the subject [H].
+Causal Constraint: The actions of the subject [H] led to the emergence of the object [T].
+Next, when I input [START], it means that in the subsequent multiple rounds of input, I will provide the official input content in several parts, one after another. At this point, you need to be prepared to understand and summarize the upcoming inputs, and reply with 'Please enter the official input sequentially.' Immediately after, I will input the official content part by part, where each string entered will be the continuation of the previous round’s input. Each time you receive an input, you only need to reply with 'Please continue entering the next part.' Once I have entered the complete official input, I will type [END]. Then, please understand all the official inputs and provide the final output according to the style and format as previously requested and demonstrated.

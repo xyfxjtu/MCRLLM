@@ -1,0 +1,14 @@
+You are an assistant skilled in reading, understanding, and summarizing. Next, I will give you an entity from a knowledge graph, as well as the triples where this entity serves as the head entity and the tail entity in the training set. Please summarize these triples in one paragraph, identifying the characteristics of the current entity when it acts as the head or tail entity. These characteristics should be judged mainly from the perspectives of syntax, morphology, and semantics. I will provide input and output examples below:
+Example input:
+Entity: school
+As head:
+school, cultivate, student
+school, offer, course
+...
+As tail:
+teacher, workplace, school
+...
+Example output:
+When "school" acts as the head entity, it usually represents the initiator of an action or the provider of resources, assuming an active role. When "school" acts as the tail entity, it usually serves as the receiver of the action or the target, assuming a passive role. In some domains, "school" as a head or tail entity may have more specific domain constraints. For example, in the education domain, a school as a head entity may be directly related to courses or subjects, while as a tail entity it may be associated with students or teachers. Additionally, as a tail entity, the role of a school may be more static, acting as a long-term target or location.
+Next, I will provide the formal input. Please summarize and respond in the format of the example input.
+formal input:

@@ -1,0 +1,51 @@
+One task in knowledge graph completion is to predict the tail entity given a head entity and a relation. I will provide you with supplemental information related to the prediction task. Please help me re-rank the candidate tail entities using this information.
+First, I will explain what this supplemental information entails.
+Entity Text Description: Both the prediction item and candidate items have this description. A text paragraph describes entity-related information.
+Entity Image Description: Both the prediction item and candidate items have this description. A text paragraph describes a series of images related to the entity.
+Relation Description: Only the prediction item has this description. A text paragraph defines the current relation, where [T] denotes the tail entity and [H] denotes the head entity.
+Relation Constraints: Only the prediction item may have this description. It describes requirements for the subject [H] and object [T] across multiple dimensions.
+Graph Context Constraints: Both the prediction and candidate items may have this description. A text paragraph summarizes the characteristics of the current entity when acting as a head or tail entity in the dataset.
+Multimodal Text Constraints: Only the prediction item may have this description. A text paragraph summarizes the textual and visual descriptions of the head entity under the current prediction task and speculates on potential descriptions or visuals the tail entity should possess.
+Path Constraints: Only candidate items may have this description. It describes the shortest path from the current head entity to the candidate tail entity in the knowledge graph.
+Next, I will provide an input-output example.Input Example:Please re-rank the candidate sequence based on the following information, ensuring that entities more likely to be the true prediction appear earlier.
+Prediction Item: ([Teacher], [employed_by], ?)
+Supplemental Information for Prediction Item:
+{
+Entity Text Description: A teacher is a professional in the education field responsible for imparting knowledge and skills in schools or training institutions, designing curricula, guiding learning, and evaluating outcomes to foster students' cognitive development and character formation.
+Entity Image Description: These images focus on teaching scenarios and professional traits, showing instructors using blackboards or smart devices, tutoring individual students, or participating in classroom discussions. They highlight knowledge transfer, teacher-student interactions, and diverse educational environments across age, gender, and cultural backgrounds, emphasizing the teacher’s role as a mentor.
+Graph Context Constraints: When acting as a head entity, [Teacher] typically links to other entities via proactive professional actions (e.g., employment at institutions, teaching courses, conducting research) and carries dynamic attributes like job titles and teaching experience. As a tail entity, it reflects passive associations (e.g., being employed by institutions, evaluated by students, or awarded titles), with attributes focused on statistical metrics (e.g., citation frequency, collaboration network density) to indicate its influenced status and aggregated impact.
+Relation Description: The relation between [H] and [T] indicates that [H] is employed by or affiliated with [T], forming an employment or membership link.
+Relation Constraints:Subject Constraint: [H] must be a legally employable individual (e.g., employee, researcher, executive) under labor laws.Object Constraint: [T] must be a legally recognized organization (e.g., company, university, government agency) capable of formal employment.Spatiotemporal Constraints: [H]’s employment period must overlap with [T]’s operational timeline, and [H]’s workplace must align with [T]’s registered or functional locations (e.g., remote work requires contractual validation).Causal Constraint: The employment relationship must originate from [T]’s proactive actions (e.g., recruitment, appointment) and be formalized via legal/administrative procedures (e.g., employment contracts).
+Multimodal Text Constraints: The "teacher" is a core figure in education, responsible for instruction, mentorship, and emotional support. Their work environment typically involves classrooms, interactive tutoring, and extracurricular activities, indicating that [T] should be an educational institution such as a "school," "training center," or "educational organization." Visuals may depict classrooms, teacher-student interactions, or parent-teacher communication.
+}
+Candidates: [Education Bureau, Persian Cat, Football Field, School]
+Supplemental Information for Candidates:
+{
+{
+Entity Text Description: The Education Bureau is a local government department overseeing educational planning, school management, policy formulation, quality supervision, teacher training, and resource allocation.
+Entity Image Description: Images depict administrative functions—office buildings with official logos, policy meetings, school inspections, teacher training sessions, and resource distribution events—highlighting governance and regulatory roles via office environments, documents, and educational interactions.
+Graph Context Constraints: As a head entity, [Education Bureau] actively manages subordinate entities (schools/teachers) and policies, carrying jurisdictional attributes. As a tail entity, it reflects subordination to higher administrative bodies (e.g., municipal government), emphasizing hierarchical归属.
+Path Constraint: Teacher -> superior -> Principal -> supervised_by -> Education Bureau
+},
+{
+Entity Text Description: The Persian Cat is a long-haired breed known for its round face, short nose, fluffy tail, and calm temperament. Originating in Persia (modern Iran), it commonly has white, golden, or tabby fur and is popular as a household pet.
+Entity Image Description: Images emphasize breed traits—close-ups of facial features, silky fur details, relaxed indoor settings, human interactions, and groomed appearances at cat shows—reinforcing elegance, historical roots, and status as a luxury pet.
+Graph Context Constraints: As a head entity, [Persian Cat] links to biological traits, care standards, or cultural symbolism. As a tail entity, it reflects passive roles (e.g., pet product compatibility, literary references), with attributes like external citation frequency.
+Path Constraint: Teacher -> teaches -> Course -> illustrated_with -> Animal Illustration -> depicts -> Persian Cat
+},
+{
+Entity Text Description: A football field is a standardized rectangular venue (105m×68m) with natural or artificial turf, markings (midfield line, penalty area), goals, stands, and night lighting for matches and training.
+Entity Image Description: Images showcase structural features and usage—turf fields with markings, goalposts, player actions, fan interactions, and night matches—emphasizing its role as a sports hub.
+Graph Context Constraints: As a head entity, [Football Field] links to operators, events, or maintenance standards. As a tail entity, it serves as a spatial anchor for teams or events, with attributes like historical usage frequency.
+Path Constraint: Teacher -> teaches -> Student -> learns -> PE Class -> location -> Football Field
+},
+{
+Entity Text Description: A school is an educational institution offering systematic teaching across grades, equipped with classrooms, playgrounds, libraries, and staffed by teachers and administrators to deliver academic and extracurricular programs.
+Entity Image Description: Images depict educational functions—campus buildings, classroom teaching, teacher-student interactions, extracurricular activities, and symbolic elements (badges, uniforms)—systematically reflecting its role in knowledge transfer and character development.
+Graph Context Constraints: As a head entity, [School] actively manages resources and stakeholders. As a tail entity, it reflects administrative subordination or social collaboration, focusing on policy compliance and resource integration.
+Path Constraint: Teacher -> teaches -> Student -> attends -> School
+}
+}
+Output Example:
+[School, Education Bureau, Football Field, Persian Cat]
+If you understand the requirements, reply with "ok." I will then provide the formal input.

@@ -1,0 +1,34 @@
+{
+"api_key": "sk-9jwk9rGDkKP5kzZw2iomN4oGDffURcz6SyeX0hnaa2gq8gjr",
+"datasets":[
+  {
+    "name": "WN18RR_IMG",
+    "ent_ids": "/root/autodl-tmp/datasets/WN18RR-IMG/WN18RR/wnid.txt",
+    "ent_desc": "/root/autodl-tmp/datasets/WN18RR-IMG/WN18RR/id_desc.txt",
+    "ent_names":"/root/autodl-tmp/datasets/WN18RR-IMG/WN18RR/id_name.txt",
+    "ent_imgdesc":"/root/autodl-tmp/datasets/WN18RR-IMG/WN18RR/ent_imgdesc.txt",
+    "rel_ids": "/root/autodl-tmp/datasets/WN18RR-IMG/WN18RR/relations.txt",
+    "rel_names": "/root/autodl-tmp/datasets/WN18RR-IMG/WN18RR/rel_name.txt",
+    "rel_desc": "/root/autodl-tmp/datasets/WN18RR-IMG/WN18RR/rel_desc.txt",
+    "test": "/root/autodl-tmp/datasets/WN18RR-IMG/WN18RR/test.txt",
+    "train": "/root/autodl-tmp/datasets/WN18RR-IMG/WN18RR/train.txt",
+    "valid": "/root/autodl-tmp/datasets/WN18RR-IMG/WN18RR/valid.txt",
+    "images": "/root/autodl-tmp/datasets/WN18RR-IMG/WN18RR-images",
+    "image_file_prefix": ""
+  },{
+    "name": "FB15K_237_IMG",
+    "ent_ids": "/root/autodl-tmp/datasets/FB15K-237-IMG/FB15K-237/ent_ids.txt",
+    "ent_desc": "/root/autodl-tmp/datasets/FB15K-237-IMG/FB15K-237/ent_dscp.txt",
+    "ent_names":"/root/autodl-tmp/datasets/FB15K-237-IMG/FB15K-237/ent_name.txt",
+    "ent_imgdesc":"/root/autodl-tmp/datasets/FB15K-237-IMG/FB15K-237/ent_imgdesc.txt",
+    "rel_ids": "/root/autodl-tmp/datasets/FB15K-237-IMG/FB15K-237/relations.txt",
+    "rel_names": "/root/autodl-tmp/datasets/FB15K-237-IMG/FB15K-237/rel_name.txt",
+    "rel_desc": "/root/autodl-tmp/datasets/FB15K-237-IMG/FB15K-237/rel_desc.txt",
+    "test": "/root/autodl-tmp/datasets/FB15K-237-IMG/FB15K-237/test.txt",
+    "train": "/root/autodl-tmp/datasets/FB15K-237-IMG/FB15K-237/train.txt",
+    "valid": "/root/autodl-tmp/datasets/FB15K-237-IMG/FB15K-237/valid.txt",
+    "images": "/root/autodl-tmp/datasets/FB15K-237-IMG/FB15K-images",
+    "image_file_prefix": ""
+  }
+]
+}
