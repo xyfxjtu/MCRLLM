@@ -24,5 +24,5 @@ python ./llm_reranking/inference_and_eval.py --dataset FB15K_237_IMG --rerank SP
 
 ## Note
 
-By default, MCC-GPT uses ComplEx as the retriever. The trained models for the two datasets are located at `./base_model/checkpoint/model_FB15K237.pth` and `./base_model/checkpoint/model_WN9.pth`. You can run `./base_model/inference.py` to save inference results. To train a retriever model, please refer to the project **[RAGCA](https://github.com/Liuoodh/RAGCA)**. If you wish to replace the retriever, rewrite the code in the `./base_model` directory.
+By default, MCC-GPT uses ComplEx as the retriever. The trained models for the two datasets are located at `./base_model/checkpoint/model_FB15K237.pth` and `./base_model/checkpoint/model_WN9.pth`. You can run `./base_model/inference.py` to save inference results. If you wish to replace the retriever, rewrite the code in the `./base_model` directory.
 
